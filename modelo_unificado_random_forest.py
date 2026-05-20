@@ -14,11 +14,12 @@ base_prof = pd.read_csv('credit_data.csv')
 # faxina dos dados credit_data.csv (tratando idades negativas e nulos)
 base_prof.loc[base_prof['age'] < 0, 'age'] = 40.92
 
+#X_prof = pd.DataFrame(X_prof).fillna(base_prof['loan'].mean()).values
+base_prof['loan'] = base_prof['loan'].fillna(base_prof['loan'].mean())
+
 # separando X e y (usando as colunas numéricas de renda, idade e empréstimo)
 X_prof = base_prof.iloc[:, 1:4].values
 y_prof = base_prof.iloc[:, 4].values
-
-X_prof = pd.DataFrame(X_prof).fillna(base_prof['loan'].mean()).values
 
 # escalonamento dos dados
 scaler = StandardScaler()

@@ -15,7 +15,8 @@ base_prof = pd.read_csv('credit_data.csv')
 
 # faxina dos dados credit_data.csv (tratando idades negativas e nulos)
 base_prof.loc[base_prof['age'] < 0, 'age'] = 40.92
-base_prof['loan'].fillna(base_prof['loan'].mean(), inplace=True)
+base_prof['loan'] = base_prof['loan'].fillna(base_prof['loan'].mean())
+#base_prof['loan'].fillna(base_prof['loan'].mean(), inplace=True)
 
 # separando X e y (usando as colunas numéricas de renda, idade e empréstimo)
 X_prof = base_prof.iloc[:, 1:4].values

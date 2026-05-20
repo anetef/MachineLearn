@@ -14,12 +14,16 @@ base_prof = pd.read_csv('credit_data.csv')
 # faxina dos dados credit_data.csv (tratando idades negativas e nulos de forma direta)
 base_prof.loc[base_prof['age'] < 0, 'age'] = 40.92
 
+# TRUQUE DEFINITIVO: preenche os nulos direto no array numérico com o Pandas
+base_prof = base_prof.fillna(base_prof.mean(numeric_only=True))
+#X_prof = pd.DataFrame(X_prof).fillna(base_prof['loan'].mean()).values
+
 # separando X e y (usando as colunas numéricas de renda, idade e empréstimo)
 X_prof = base_prof.iloc[:, 1:4].values
 y_prof = base_prof.iloc[:, 4].values
 
-# TRUQUE DEFINITIVO: preenche os nulos direto no array numérico com o Pandas
-X_prof = pd.DataFrame(X_prof).fillna(base_prof['loan'].mean()).values
+# Verificando se ainda existem nulos na base do professor
+#print("Valores nulos por coluna:\n", base_prof.isnull().sum())
 
 # escalonamento dos dados
 scaler = StandardScaler()
