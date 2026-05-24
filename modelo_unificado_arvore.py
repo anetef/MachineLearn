@@ -46,8 +46,8 @@ print(confusion_matrix(y_te_p, prev_prof))
 plt.figure(figsize=(20, 10))
 tree.plot_tree(clf_prof, feature_names=['income', 'age', 'loan'], class_names=['Pago', 'Calote'], filled=True, rounded=True, fontsize=10)
 plt.tight_layout()
-plt.savefig('grafico_arvore_professor_HD.png', bbox_inches='tight', dpi=300)
-print("✅ Gráfico 'grafico_arvore_professor_HD.png' salvo!")
+plt.savefig('grafico_py_arvore_professor_HD.png', bbox_inches='tight', dpi=300)
+print("✅ Gráfico 'grafico_PY_arvore_professor_HD.png' salvo!")
 
 
 print("\n--------------------------------------------------")
@@ -81,5 +81,5 @@ print(confusion_matrix(y_te_k, prev_kaggle))
 # salvando gráfico da base 2
 plt.figure(figsize=(24, 12))
 tree.plot_tree(clf_kaggle, feature_names=X_tab_kaggle.columns.tolist(), class_names=clf_kaggle.classes_.tolist(), filled=True, rounded=True, fontsize=10)
-plt.savefig('grafico_arvore_kaggle_HD.png', bbox_inches='tight', dpi=300)
-print("✅ Gráfico 'grafico_arvore_kaggle_HD.png' salvo!")
+plt.savefig('grafico_py_arvore_kaggle_HD.png', bbox_inches='tight', dpi=300)
+print("✅ Gráfico 'grafico_PY_arvore_kaggle_HD.png' salvo!")
