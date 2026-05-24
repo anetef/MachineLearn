@@ -1,5 +1,5 @@
 # =====================================================================
-# 🚀 ALGORITMO: RANDOM FOREST (EQUIVALENTE EM R)
+# 🚀 ALGORITMO: RANDOM FOREST 
 # =====================================================================
 
 # install.packages("randomForest")
