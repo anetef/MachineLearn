@@ -5,9 +5,6 @@
 library(randomForest) # Pacote principal para criar a Floresta Aleatória.
 library(caret) # Framework gigantesco de Machine Learning no R. Usamos para extrair métricas detalhadas e criar o One-Hot Encoding.
 
-# ==============================================================================
-# 🧮 FUNÇÃO DE AVALIAÇÃO (Nossa "Calculadora de Notas")
-# ==============================================================================
 # Criamos essa função para automatizar o cálculo das métricas e garantir que a matemática seja idêntica para as duas bases.
 avaliar_modelo <- function(matriz_confusao, tipo_base) {
   
